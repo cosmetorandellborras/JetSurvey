@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JetSurvey</string>
+    <string name="sign_or_create_account">Sign in or create an account</string>
+    <string name="continuebutton">Continue</string>
+</resources>
