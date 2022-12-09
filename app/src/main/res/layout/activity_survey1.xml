@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="1 of 3"
+        android:text="1 of 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:max="3"
+        android:max="2"
         android:min="0"
         android:progress="1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +82,8 @@
             android:theme="@style/checkBox"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layoutDirection="rtl"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,7 +107,8 @@
             android:theme="@style/checkBox"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layoutDirection="rtl"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,7 +132,8 @@
             android:theme="@style/checkBox"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layoutDirection="rtl"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,9 +156,11 @@
             android:theme="@style/checkBox"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layoutDirection="rtl"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
@@ -164,6 +169,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:textAllCaps="false"
         android:enabled="false"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,9 +9,12 @@ import android.widget.CompoundButton;
 
 import com.example.jetsurvey.databinding.ActivitySurvey1Binding;
 
+import java.util.ArrayList;
+
 public class Survey1 extends AppCompatActivity {
 
     private ActivitySurvey1Binding binding;
+    private ArrayList<CharSequence> options;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class Survey1 extends AppCompatActivity {
         binding = ActivitySurvey1Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
+        options = new ArrayList<>();
 
         binding.readcheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -26,6 +30,7 @@ public class Survey1 extends AppCompatActivity {
                 if(b){
                     binding.readchecklayout.setBackgroundResource(R.drawable.layoutchecked);
                     binding.nextButton.setEnabled(true);
+                    options.add(binding.readcheckbox.getText().toString());
                 }
                 else{
                     binding.readchecklayout.setBackgroundResource(R.drawable.layoutunchecked);
@@ -38,6 +43,7 @@ public class Survey1 extends AppCompatActivity {
                 if(b){
                     binding.workoutlayout.setBackgroundResource(R.drawable.layoutchecked);
                     binding.nextButton.setEnabled(true);
+                    options.add(binding.workoutcheckbox.getText().toString());
                 }else{
                     binding.workoutlayout.setBackgroundResource(R.drawable.layoutunchecked);
                 }
@@ -49,6 +55,7 @@ public class Survey1 extends AppCompatActivity {
                 if(b){
                     binding.drawlayout.setBackgroundResource(R.drawable.layoutchecked);
                     binding.nextButton.setEnabled(true);
+                    options.add(binding.drawcheckbox.getText().toString());
                 }else{
                     binding.drawlayout.setBackgroundResource(R.drawable.layoutunchecked);
                 }
@@ -60,6 +67,7 @@ public class Survey1 extends AppCompatActivity {
                 if(b){
                     binding.playvideogameslayout.setBackgroundResource(R.drawable.layoutchecked);
                     binding.nextButton.setEnabled(true);
+                    options.add(binding.playvidogamescheckbox.getText().toString());
                 }else{
                     binding.playvideogameslayout.setBackgroundResource(R.drawable.layoutunchecked);
                 }
@@ -70,7 +78,7 @@ public class Survey1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Survey2.class);
-                //intent.putExtra();
+                intent.putCharSequenceArrayListExtra("check",options);
                 startActivity(intent);
             }
         });
